@@ -31,9 +31,6 @@ orphans = lines.flatMap(lambda line: links(line)) \
     .sortByKey()
 
 
-print("==========================================")
-print(orphans.take(10))
-print("==========================================")
 output = open(sys.argv[2], "w")
 for orphan in orphans.collect():
     output.write(orphan[0] + "\n")
