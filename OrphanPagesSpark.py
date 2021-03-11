@@ -10,8 +10,8 @@ def links(line):
     pages = []
     for child in children:
         child = child.strip()
-        if parent != child:
-            pages.append(child + "\t1")
+        # if parent != child:
+        pages.append(child + "\t1")
     pages.append(parent + "\t0")
     return pages
 

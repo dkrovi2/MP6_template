@@ -30,7 +30,7 @@ orphans = lines.flatMap(lambda line: links(line)) \
     .sortByKey(False) \
     .map(lambda entry: (str(entry[1]), entry[0]))
 
-results = orphans.take(5)
+results = orphans.take(10)
 results.sort()
 output = open(sys.argv[2], "w")
 for orphan in results:

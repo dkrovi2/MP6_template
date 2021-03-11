@@ -44,7 +44,7 @@ words = lines.flatMap(lambda line: splitline(line.lower(), delimiters[0]))\
 
 results = []
 
-for entry in words.take(5):
+for entry in words.take(10):
     result = list(entry)
     results.append(result[1] + "\t" + str(result[0]))
 
