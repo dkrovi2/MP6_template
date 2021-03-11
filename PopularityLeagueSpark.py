@@ -34,20 +34,21 @@ popular = lines.flatMap(lambda line: links(line)) \
     .filter(lambda entry: entry[0] in leagueIds)\
     .map(lambda entry: (entry[1], entry[0])) \
     .sortByKey() \
-    .map(lambda entry: (str(entry[1]), entry[0]))\
     .collect()
+
+popular = sorted(popular, key=lambda x: (x[0], x[1]))
+popular = [(x[1], x[0]) for x in popular]
+print(popular)
 
 count = 0
 rank = 0
 nextrank = 0
 results = []
 for entry in popular:
-    if count != entry[1]:
-        rank = nextrank
+    rank = nextrank
     count = entry[1]
     nextrank = nextrank + 1
     results.append((entry[0], rank))
-print(popular)
 print(results)
 results.sort()
 #TODO
