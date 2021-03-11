@@ -9,7 +9,6 @@ sc = SparkContext(conf = conf)
 lines = sc.textFile(sys.argv[1], 1) 
 
 #TODO
-
 output = open(sys.argv[2], "w")
 
 #TODO
